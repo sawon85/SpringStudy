@@ -11,8 +11,8 @@ sourceCompatibility = '11'
 configurations {
 compileOnly {
 	extendsFrom annotationProcessor
-}}
-
+	}
+}
 
 repositories {
 	mavenCentral()
@@ -20,11 +20,14 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-
-	compileOnly 'org.projectlombok:lombok' 
-	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'javax.inject:javax.inject:1'
+	//web라이브러리
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	
-	testCompileOnly 'org.projectlombok:lombok' 
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 	
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
